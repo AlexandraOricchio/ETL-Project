@@ -31,7 +31,7 @@ The second data source I chose was Wikipedia. The wiki webpage provides a table 
 
 At this point, I noticed that the dataframes differed slightly in how they referenced teams by name or abbreviation. However, none of the dataframes were referencing a team incorrectly, there are just several acceptable ways to refer to an MLB team. In order to merge my three dataframes accurately, I created a csv file which included each dataframes team reference column. In other words, the file has a row for each MLB team with three different reference names/abbreviations. This csv file was my third data source. I imported the csv file into pandas and created a dataframe. Using this dataframe, I was able to merge all my dataframes into one master dataframe. 
 
-My database is relational, and I chose to load my data into SQL. Each of my dataframes make up the tables within my SQL database. The following outlines my schema (I have also included a file of my database schema in my repository):
+My database is relational, and I chose to load my data as a SQL database. Each of my dataframes make up the tables within my SQL database. The following outlines my schema (I have also included a file of my database schema in my repository):
 
 - *Table: reference.* This table identifies how a team is referenced throughout the database. It has three columns, each providing how the team is referenced relative to one of the databases table. Each reference column is a foreign key. Column “team_name_fran” is a foreign key with a one to one relationship to the franchise table. Column “team_name_bp” is a foreign key with a one to one relationship to the parks table. Column “location_team_abbrv” is a foreign key with a one to many relationships to the schedule table.
 
