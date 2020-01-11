@@ -47,4 +47,4 @@ My initial vision was to create a database that could be used to analyze an MLB 
 - Analyze the outcome of Houston Astros games and whether the ballpark location has any correlation to the outcome results
 - Analyze game attendance and any correlation to ballpark location 
 
-If I had more time, I would have extracted data from a weather API and add a table which provided the weather at the time and location of each game. With this additional table, one could analyze whether performance has any correlation to weather. 
+If I had more time, I would have extracted data from a weather API and added a table which provided the weather at the time and location of each game. With this additional table, one could analyze whether performance has any correlation to weather. 
