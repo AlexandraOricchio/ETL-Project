@@ -33,17 +33,13 @@ At this point, I noticed that the dataframes differed slightly in how they refer
 
 My database is relational, and I chose to load my data into SQL. Each of my dataframes make up the tables within my SQL database. The following outlines my schema (I have also included a file of my database schema in my repository):
 
-- Table: reference
-This table identifies how a team is referenced throughout the database. It has three columns, each providing how the team is referenced relative to one of the databases table. Each reference column is a foreign key. Column “team_name_fran” is a foreign key with a one to one relationship to the franchise table. Column “team_name_bp” is a foreign key with a one to one relationship to the parks table. Column “location_team_abbrv” is a foreign key with a one to many relationships to the schedule table.
+- Table: reference. This table identifies how a team is referenced throughout the database. It has three columns, each providing how the team is referenced relative to one of the databases table. Each reference column is a foreign key. Column “team_name_fran” is a foreign key with a one to one relationship to the franchise table. Column “team_name_bp” is a foreign key with a one to one relationship to the parks table. Column “location_team_abbrv” is a foreign key with a one to many relationships to the schedule table.
 
-- Table: franchise
-This table includes current MLB franchise data. Specifically, it includes the franchise id, team id, team name, and when the franchise began and end. The primary key for this table is “team_name_fran” which, in other words, is the team name. 
+- Table: franchise. This table includes current MLB franchise data. Specifically, it includes the franchise id, team id, team name, and when the franchise began and end. The primary key for this table is “team_name_fran” which, in other words, is the team name. 
 
-- Table: parks
-This table includes current MLB ballparks data. It includes information such as park capacity, year park opened, surface of ballpark field (i.e. grass versus turf), roof type, location (city and state), etc. The primary key for this table is “team_name_bp”, which, like the franchise table, is the team name. 
+- Table: parks. This table includes current MLB ballparks data. It includes information such as park capacity, year park opened, surface of ballpark field (i.e. grass versus turf), roof type, location (city and state), etc. The primary key for this table is “team_name_bp”, which, like the franchise table, is the team name. 
 
-- Table: schedule
-This is the largest table in my database. It includes game schedule data for the Houston Astros for the 2017, 2018, and 2019 season. The table includes the game number (i.e. game number 5 of the 2017 season), date and time of game, opposing team, attendance, stats on the outcome of the game (i.e. win/loss, runs scored, runs allowed, win/loss record, innings, rank after game, streak, etc.) and more. The column “location_team_abbrv” is a foreign key with a many to one relationship to the reference table. 
+- Table: schedule. This is the largest table in my database. It includes game schedule data for the Houston Astros for the 2017, 2018, and 2019 season. The table includes the game number (i.e. game number 5 of the 2017 season), date and time of game, opposing team, attendance, stats on the outcome of the game (i.e. win/loss, runs scored, runs allowed, win/loss record, innings, rank after game, streak, etc.) and more. The column “location_team_abbrv” is a foreign key with a many to one relationship to the reference table. 
 
 By utilizing the reference table, one could combine these tables into on large dataset. I essentially did this in my python script, merging the dataframes into one. I originally thought the combined single dataframe would be my final database product. As I began the “loading” process, I realized that, for the datasets to be easily accessed and reassembled in many different ways, my database should be stored in an object-relational database system like Postgres where a management tool like pgAdmin can be utilized to interact with the tables of my dataset. From there, one can merge the tables as one large table, if they choose. Which leads to the hypothetical uses of my database.
 
