@@ -13,7 +13,7 @@ My database will combine game schedule data for the Houston Astros for selected 
 This database will be relational.
 
 ## Repository Guide:
-- **ETL_project.ipynb:** jupyter notebook with python script containing my extract, transform, and load process.
+- **ETL_project.ipynb:** jupyter notebook with python script containing my extract, transform, and load process
 - **name_abbrv.csv:** csv file used as a datasource in my extract process
 - **schema.sql:** schema of my SQL database
 
